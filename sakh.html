@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Vlog - Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff6f9;
+            background-image: radial-gradient(#fcd6e3 2px, transparent 2px);
+            background-size: 24px 24px;
+            color: #1a1a3a;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Professional Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 25px rgba(255, 71, 126, 0.08);
+            border-bottom: 1px solid rgba(255, 220, 230, 0.5);
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ff477e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+        .logo i {
+            background: linear-gradient(135deg, #ff477e, #ff758c);
+            color: white;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 14px;
+            box-shadow: 0 6px 15px rgba(255, 71, 126, 0.35);
+        }
+        .menu-icon {
+            font-size: 20px;
+            color: #ff477e;
+            cursor: pointer;
+            background: #fff0f5;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .menu-icon:hover {
+            background: #ff477e;
+            color: white;
+        }
+
+        /* Professional Content Wrapper */
+        .content-wrapper {
+            max-width: 460px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            margin-top: 35px;
+        }
+
+        /* LIVE PICTURE CSS - FLOATING EFFECT */
+        .profile-img-wrapper {
+            position: relative;
+            width: 150px;
+            margin: 0 auto;
+        }
+        
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 0 25px 40px rgba(255, 71, 126, 0.3); }
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ff477e;
+            box-shadow: 0 15px 35px rgba(255, 71, 126, 0.22);
+            overflow: hidden;
+            background: white;
+            animation: floatImage 4s ease-in-out infinite;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* LIVE BADGE CSS */
+        .live-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 0px;
+            background: #ff0000;
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 10;
+            animation: pulse 1.5s infinite;
+        }
+
+        .live-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+
+        /* SVG ANIMATIONS (GIRL & BOY) */
+        .svg-anim {
+            position: absolute;
+            z-index: 20;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.15));
+        }
+        
+        .girl-singing {
+            top: 10px;
+            left: -45px;
+            animation: danceSing 3s ease-in-out infinite;
+        }
+        
+        .boy-dancing {
+            bottom: 15px;
+            right: -45px;
+            animation: danceBoy 3.5s ease-in-out infinite;
+        }
+
+        @keyframes danceSing {
+            0%, 100% { transform: translateY(0) rotate(-8deg); }
+            50% { transform: translateY(-15px) rotate(5deg) scale(1.05); }
+        }
+
+        @keyframes danceBoy {
+            0%, 100% { transform: translateY(0) rotate(8deg); }
+            50% { transform: translateY(-15px) rotate(-5deg) scale(1.05); }
+        }
+        
+        /* Real Subscriber Badge */
+        .subs-badge {
+            background: white;
+            border: 1px solid #ffebee;
+            border-radius: 40px;
+            padding: 10px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 32px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+        .subs-badge i { color: #ff0000; font-size: 22px; }
+        .subs-text { text-align: left; line-height: 1.2; }
+        .subs-text span { font-size: 10px; color: #888; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; }
+        .subs-text strong { font-size: 17px; color: #1a1a3a; display: block; font-weight: 800; }
+
+        .update-pill {
+            background: linear-gradient(135deg, #fff0f5, #ffe4ee);
+            color: #ff477e;
+            padding: 9px 24px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 16px;
+            box-shadow: 0 6px 18px rgba(255, 71, 126, 0.12);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+        }
+
+        /* Hindi Request Box */
+        .hindi-hindi-box {
+            background: linear-gradient(135deg, #ffffff, #fff5f8);
+            border: 2px dashed #ff477e;
+            border-radius: 22px;
+            padding: 24px 20px;
+            margin: 25px 0;
+            box-shadow: 0 10px 30px rgba(255, 71, 126, 0.1);
+            text-align: center;
+        }
+        .hindi-hindi-box h3 {
+            font-size: 18px;
+            color: #ff477e;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .hindi-hindi-box p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Category Card */
+        .card {
+            background: white;
+            border-radius: 22px;
+            padding: 22px 20px;
+            margin-bottom: 22px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            border: 1px solid rgba(255, 220, 230, 0.6);
+        }
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .category-pill {
+            background: #fff5f8;
+            color: #ff477e;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #ffe3ec;
+            transition: all 0.2s ease;
+        }
+        .category-pill:hover {
+            background: #ff477e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* YT Subscribe Card */
+        .yt-card {
+            background: linear-gradient(145deg, #ffffff, #fff5f7);
+            border-radius: 22px;
+            padding: 30px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 12px 35px rgba(255, 71, 126, 0.12);
+            border: 1px solid rgba(255, 200, 210, 0.6);
+        }
+        .yt-card .yt-icon-large {
+            background: #ff0000;
+            color: white;
+            width: 56px;
+            height: 40px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin: 0 auto 16px auto;
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+        }
+        .yt-card h2 {
+            font-size: 19px;
+            font-weight: 800;
+            color: #1a1a3a;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .yt-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .subscribe-btn {
+            background: linear-gradient(135deg, #ff3333, #ff0000);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.35);
+            transition: all 0.3s ease;
+        }
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 0, 0, 0.45);
+        }
+
+        /* New Image Gallery Box */
+        .image-box {
+            background: white;
+            border-radius: 22px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            border: 1px solid rgba(255, 220, 230, 0.6);
+            text-align: center;
+        }
+        .image-box h3 {
+            font-size: 18px;
+            color: #1a1a3a;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .image-box img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-box img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Fan Love Section */
+        .fan-love {
+            margin-bottom: 35px;
+            text-align: left;
+        }
+        .fan-love h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a1a3a;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .fan-love h2 span { color: #ff477e; }
+        
+        .testimonial {
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+        }
+        .testimonial:hover {
+            transform: translateY(-2px);
+        }
+        .test-blue { background-color: #f0f5ff; }
+        .test-yellow { background-color: #fffcf0; }
+        .test-green { background-color: #f0fbf4; }
+        
+        .testimonial p {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .testimonial h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .test-blue h4 { color: #0984e3; }
+        .test-yellow h4 { color: #e17055; }
+        .test-green h4 { color: #00b894; }
+        
+        .testimonial-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: #191932;
+            color: white;
+            border-radius: 36px 36px 0 0;
+            padding: 40px 20px 25px 20px;
+            margin-top: 30px;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+        }
+        .footer-section h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .footer-section h2 span { color: #ff477e; }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        .social-icons a {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .yt-icon { background: #ff0000; }
+        .ig-icon { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        .footer-bottom {
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 18px;
+            text-align: center;
+        }
+        .footer-bottom p { margin-bottom: 10px; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .footer-links a { color: #888; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-star"></i> Sakshi Vlog
+        </div>
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            
+            <div class="profile-img-wrapper">
+                
+                <!-- 1. LEFT SVG: Girl Singing Icon -->
+                <svg class="svg-anim girl-singing" viewBox="0 0 100 100" width="70" height="70">
+                    <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#ff477e" stroke-width="4"/>
+                    <g stroke="#ff477e" stroke-width="5" stroke-linecap="round" fill="none">
+                        <!-- Hair & Head -->
+                        <path d="M30 40 C 30 10, 70 10, 70 40" stroke-width="8" />
+                        <circle cx="50" cy="35" r="9" fill="#ff477e" />
+                        <!-- Body -->
+                        <path d="M50 50 L50 70" />
+                        <!-- Arms holding mic -->
+                        <path d="M35 60 L45 50 L55 55" />
+                        <!-- Legs -->
+                        <path d="M40 85 L50 70 L60 85" />
+                        <!-- Mic -->
+                        <rect x="52" y="40" width="8" height="16" rx="4" fill="#333" stroke="none" transform="rotate(30 52 40)"/>
+                    </g>
+                    <!-- Music Note Emoji -->
+                    <text x="18" y="40" font-size="22">🎵</text>
+                </svg>
+
+                <!-- MAIN PROFILE IMAGE -->
+                <div class="profile-img-container">
+                    <img src="8582.png" alt="Sakshi Profile">
+                </div>
+                
+                <!-- 2. RIGHT SVG: Boy Dancing Icon -->
+                <svg class="svg-anim boy-dancing" viewBox="0 0 100 100" width="70" height="70">
+                    <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#1e88e5" stroke-width="4"/>
+                    <g stroke="#1e88e5" stroke-width="5" stroke-linecap="round" fill="none">
+                        <!-- Head -->
+                        <circle cx="50" cy="30" r="9" fill="#1e88e5" />
+                        <!-- Body -->
+                        <path d="M50 45 L50 65" />
+                        <!-- Dancing Arms -->
+                        <path d="M28 35 L50 50 L72 30" />
+                        <!-- Dancing Legs -->
+                        <path d="M35 85 L50 65 L65 80" />
+                    </g>
+                    <!-- Sparkle Emoji -->
+                    <text x="65" y="40" font-size="22">✨</text>
+                </svg>
+
+                <!-- Pulsing LIVE Badge -->
+                <div class="live-badge">
+                    <div class="dot"></div> LIVE
+                </div>
+
+            </div>
+            
+            <div class="subs-badge">
+                <i class="fab fa-youtube"></i>
+                <div class="subs-text">
+                    <span>Total Subscribers</span>
+                    <strong>2.52K+</strong>
+                </div>
+            </div>
+            <br>
+            <div class="update-pill">✨ New Videos Every Day!</div>
+        </div>
+
+        <!-- Hindi Request Box -->
+        <div class="hindi-hindi-box">
+            <h3>💖 प्यारे दोस्तों! 💖</h3>
+            <p>अगर aapko मेरी वीडियोज़ पसंद आती हैं, तो कृपया चैनल को सब्सक्राइब ज़रूर करें और अपने दोस्तों के साथ शेयर करें! 🙏✨</p>
+        </div>
+
+        <!-- Categories Card -->
+        <div class="card">
+            <div class="category-grid">
+                <div class="category-pill"><i class="fas fa-video"></i> Daily Vlogs</div>
+                <div class="category-pill"><i class="fas fa-mobile-alt"></i> Trendy Reels</div>
+                <div class="category-pill"><i class="fas fa-microphone-alt"></i> Singing</div>
+                <div class="category-pill"><i class="fas fa-dancing"></i> Dancing</div>
+            </div>
+        </div>
+
+        <!-- YouTube Subscribe Box -->
+        <div class="yt-card">
+            <div class="yt-icon-large">
+                <i class="fas fa-play"></i>
+            </div>
+            <h2>Subscribe to my<br>YouTube Channel for<br>daily fun!</h2>
+            <p>Join our growing community and never miss an adventure. Hit the bell icon! 🔔</p>
+            <a href="https://youtube.com/@sakshiparkash-p?si=NXYozpzKYDoCfk3H" target="_blank" style="text-decoration:none;">
+                <button class="subscribe-btn">Subscribe Now</button>
+            </a>
+        </div>
+
+        <!-- New Image Gallery Box -->
+        <div class="image-box">
+            <h3>📸 Latest Snap</h3>
+            <img src="8582_2.png" alt="Sakshi Latest Gallery Image">
+        </div>
+
+        <!-- Fan Love Section -->
+        <div class="fan-love">
+            <h2><span>Fan Love</span> ❤️️</h2>
+            
+            <div class="testimonial test-blue">
+                <div class="testimonial-icon">🎤</div>
+                <p>"Your voice is absolutely magical! I listen to your singing covers on repeat every single day."</p>
+                <h4>- ANJALI, 15</h4>
+            </div>
+
+            <div class="testimonial test-yellow">
+                <div class="testimonial-icon">💃</div>
+                <p>"Your dance routines are so energetic and fun! I always try to learn the steps from your reels."</p>
+                <h4>- ROHAN, 14</h4>
+            </div>
+
+            <div class="testimonial test-green">
+                <div class="testimonial-icon">✨</div>
+                <p>"I love your daily vlogs! It feels like I'm hanging out with my best friend. Keep shining, Sakshi!"</p>
+                <h4>- PRIYA, 16</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="content-wrapper" style="padding: 0;">
+            <h2>Follow My <span>Adventures!</span></h2>
+            
+            <div class="social-icons">
+                <a href="https://youtube.com/@sakshiparkash-p?si=NXYozpzKYDoCfk3H" target="_blank" class="yt-icon" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/sk579274?stkn=MXh6OTB6aDA0NzBkMA==" target="_blank" class="ig-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Sakshi Vlog. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Business Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
